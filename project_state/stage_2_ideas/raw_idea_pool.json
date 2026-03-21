@@ -1,0 +1,93 @@
+{
+  "generation_date": "2026-03-21",
+  "research_direction": "多模态模型在卫星网络通信资源管理中的应用",
+  "research_gaps": [
+    "Gap-1: 多模态融合与卫星资源管理交叉空白",
+    "Gap-2: 语义通信与卫星资源决策结合",
+    "Gap-3: LLM在通信资源管理中的应用",
+    "Gap-4: 跨域知识迁移（地面→卫星）"
+  ],
+  "raw_ideas": [
+    {
+      "id": "I001",
+      "title": "基于频谱-文本多模态融合的LEO卫星动态波束管理",
+      "core_idea": "将卫星频谱感知数据（时频图）与业务文本描述（如用户需求、业务类型）通过多模态Transformer融合，实现智能波束分配决策",
+      "technical_route": "频谱时频图编码(ViT) + 文本编码(BERT) + 跨模态注意力 + 强化学习决策",
+      "expected_contribution": "首次将多模态学习引入卫星波束管理，提升资源分配的语义感知能力",
+      "gap_addressed": "Gap-1"
+    },
+    {
+      "id": "I002",
+      "title": "大语言模型增强的卫星网络语义资源分配框架",
+      "core_idea": "利用LLM理解用户业务描述（如\"紧急视频会议\"、\"IoT数据采集\"），自动生成资源需求标签，指导资源分配策略",
+      "technical_route": "业务描述 → LLM语义理解 → 资源需求向量 → DRL资源分配",
+      "expected_contribution": "LLM首次用于卫星资源管理的语义理解环节",
+      "gap_addressed": "Gap-2, Gap-3"
+    },
+    {
+      "id": "I003",
+      "title": "跨模态知识蒸馏的地面-卫星资源管理迁移学习",
+      "core_idea": "从地面网络资源管理数据学习策略，通过跨域知识蒸馏迁移到卫星网络，解决卫星场景数据稀缺问题",
+      "technical_route": "地面网络预训练 → 特征对齐 → 领域自适应 → 卫星网络微调",
+      "expected_contribution": "解决卫星场景训练数据不足问题，加速模型收敛",
+      "gap_addressed": "Gap-4"
+    },
+    {
+      "id": "I004",
+      "title": "多智能体多模态协作的LEO星座资源协同优化",
+      "core_idea": "多个卫星智能体通过多模态信息（频谱+位置+业务）共享，协作优化全局资源分配",
+      "technical_route": "多智能体强化学习 + 多模态观测空间 + 通信协议设计",
+      "expected_contribution": "多智能体+多模态双重创新，解决分布式协同问题",
+      "gap_addressed": "Gap-1"
+    },
+    {
+      "id": "I005",
+      "title": "基于多模态因果推理的卫星网络资源异常检测与自愈",
+      "core_idea": "融合频谱异常模式图像、日志文本和网络状态，通过因果推理定位资源分配异常根因并自动修复",
+      "technical_route": "异常检测 + 多模态因果图构建 + 根因定位 + 自动修复策略",
+      "expected_contribution": "首次将因果推理引入卫星网络运维",
+      "gap_addressed": "Gap-1"
+    },
+    {
+      "id": "I006",
+      "title": "语义-信道联合感知的卫星通信智能切换决策",
+      "core_idea": "结合信道状态（CSI）和业务语义（如\"低延迟优先\"、\"大带宽优先\"）进行智能切换决策",
+      "technical_route": "CSI编码 + 语义编码 + 多模态融合 → 切换决策网络",
+      "expected_contribution": "语义感知的切换决策，提升用户体验",
+      "gap_addressed": "Gap-1, Gap-2"
+    },
+    {
+      "id": "I007",
+      "title": "视觉-语言预训练模型辅助的卫星频谱态势感知",
+      "core_idea": "利用预训练的视觉-语言模型（如CLIP）理解频谱时频图，实现零样本/少样本频谱异常识别",
+      "technical_route": "频谱图 → 视觉编码器 → 文本描述 → 对比学习 → 异常检测",
+      "expected_contribution": "零样本频谱感知，降低标注成本",
+      "gap_addressed": "Gap-1, Gap-3"
+    },
+    {
+      "id": "I008",
+      "title": "多模态图神经网络建模的卫星网络资源拓扑优化",
+      "core_idea": "将卫星网络建模为多模态图（节点：卫星/用户，边：链路，特征：多模态），通过GNN优化资源拓扑",
+      "technical_route": "多模态图构建 → 图神经网络 → 资源分配策略",
+      "expected_contribution": "图结构+多模态融合，捕捉网络拓扑语义",
+      "gap_addressed": "Gap-1"
+    },
+    {
+      "id": "I009",
+      "title": "基于多模态预测的卫星网络前瞻性资源调度",
+      "core_idea": "融合历史频谱数据、业务流量预测和轨道信息，提前预分配资源",
+      "technical_route": "时序预测 + 多模态融合 + 前瞻性优化",
+      "expected_contribution": "从被动响应到主动预测",
+      "gap_addressed": "Gap-1"
+    },
+    {
+      "id": "I010",
+      "title": "联邦多模态学习的卫星网络隐私保护资源优化",
+      "core_idea": "卫星端本地多模态数据处理，联邦学习协同优化资源策略，保护用户隐私",
+      "technical_route": "本地多模态编码 → 联邦聚合 → 全局模型更新",
+      "expected_contribution": "隐私保护+多模态融合",
+      "gap_addressed": "Gap-1"
+    }
+  ],
+  "total_ideas": 10
+}

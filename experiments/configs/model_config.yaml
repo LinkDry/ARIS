@@ -1,0 +1,71 @@
+# LLM-SRAF Model Configuration
+# =============================
+
+model:
+  # Semantic encoder
+  semantic_hidden_dim: 512
+  semantic_output_dim: 128
+
+  # State encoder
+  state_input_dim: 64
+  state_hidden_dim: 256
+  state_output_dim: 128
+
+  # Orbit encoder
+  orbit_input_dim: 32
+  orbit_hidden_dim: 128
+  orbit_output_dim: 64
+
+  # Fusion
+  fusion_output_dim: 256
+
+  # Actor-Critic
+  actor_hidden_dim: 256
+  critic_hidden_dim: 256
+
+  # Action space
+  num_beams: 8
+  num_spectrum_blocks: 16
+  num_power_levels: 5
+  num_priorities: 4
+
+training:
+  # Supervised pre-training
+  semantic_epochs: 10
+  batch_size: 32
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+
+  # RL fine-tuning
+  rl_episodes: 1000
+  horizon: 256
+  rl_learning_rate: 3e-4
+  ppo_epochs: 4
+  gamma: 0.99
+  lambda_gae: 0.95
+  clip_epsilon: 0.2
+  entropy_coef: 0.01
+  value_coef: 0.5
+
+environment:
+  # Satellite network
+  num_satellites: 1584
+  num_users: 100
+  num_beams: 8
+  num_spectrum_blocks: 16
+  max_steps: 1000
+
+data:
+  # Semantic pairs
+  num_samples: 10000
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  max_length: 128
+
+experiment:
+  seeds: [42, 123, 456, 789, 1024]
+  device: cuda
+  log_interval: 10
+  save_interval: 100

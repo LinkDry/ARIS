@@ -1,0 +1,188 @@
+{
+  "analysis_date": "2026-03-21",
+  "evaluations": [
+    {
+      "id": "I001",
+      "title": "基于频谱-文本多模态融合的LEO卫星动态波束管理",
+      "feasibility": {
+        "score": 8,
+        "technical": "技术成熟，ViT+BERT架构已有成熟实现",
+        "resource": "需要频谱数据集，可使用公开数据或仿真",
+        "time": "6-8个月可完成核心实验",
+        "risks": ["频谱-文本配对数据获取困难", "计算资源需求中等"]
+      },
+      "impact": {
+        "score": 9,
+        "academic": "首次将多模态引入卫星资源管理，创新性强",
+        "application": "可直接应用于LEO星座运营",
+        "publication": "适合IEEE JSAC/TWC等顶刊"
+      },
+      "novelty": {
+        "score": 9,
+        "status": "NOVEL",
+        "differentiation": "现有卫星资源管理均为单模态，多模态融合为空白"
+      },
+      "challenge_resistance": {
+        "score": 7,
+        "critical_issues": ["频谱-文本配对数据的合理性需要论证"],
+        "major_issues": ["多模态融合带来的计算开销需评估"],
+        "responses": ["可通过仿真生成配对数据", "可设计轻量级融合模块"]
+      },
+      "total_score": 8.2
+    },
+    {
+      "id": "I002",
+      "title": "大语言模型增强的卫星网络语义资源分配框架",
+      "feasibility": {
+        "score": 7,
+        "technical": "LLM API调用方便，但与资源分配结合需设计",
+        "resource": "需要LLM API调用成本，DRL训练资源",
+        "time": "8-10个月",
+        "risks": ["LLM推理延迟可能不满足实时性", "API成本高"]
+      },
+      "impact": {
+        "score": 10,
+        "academic": "LLM+通信交叉热点，极高创新性",
+        "application": "语义通信是6G热点方向",
+        "publication": "适合Nature/Science子刊或顶会"
+      },
+      "novelty": {
+        "score": 10,
+        "status": "NOVEL",
+        "differentiation": "LLM在卫星资源管理中应用几乎空白"
+      },
+      "challenge_resistance": {
+        "score": 6,
+        "critical_issues": ["实时性是关键挑战，LLM推理延迟"],
+        "major_issues": ["LLM输出不确定性如何处理"],
+        "responses": ["可使用轻量级LLM或边缘部署", "可设计确定性映射模块"]
+      },
+      "total_score": 8.3
+    },
+    {
+      "id": "I003",
+      "title": "跨模态知识蒸馏的地面-卫星资源管理迁移学习",
+      "feasibility": {
+        "score": 8,
+        "technical": "迁移学习技术成熟",
+        "resource": "地面网络数据丰富，卫星仿真即可",
+        "time": "6-8个月",
+        "risks": ["地面-卫星domain gap较大，迁移效果待验证"]
+      },
+      "impact": {
+        "score": 7,
+        "academic": "迁移学习在通信中已有探索，创新性中等",
+        "application": "解决卫星数据稀缺问题",
+        "publication": "适合IEEE TWC/TNNLS"
+      },
+      "novelty": {
+        "score": 7,
+        "status": "PARTIALLY_NOVEL",
+        "differentiation": "迁移学习在通信中已有应用，多模态+卫星组合有一定新颖性"
+      },
+      "challenge_resistance": {
+        "score": 7,
+        "critical_issues": ["domain gap可能导致负迁移"],
+        "major_issues": ["跨域特征对齐的有效性"],
+        "responses": ["可设计对抗性域自适应", "可引入域差异度量"]
+      },
+      "total_score": 7.3
+    },
+    {
+      "id": "I004",
+      "title": "多智能体多模态协作的LEO星座资源协同优化",
+      "feasibility": {
+        "score": 6,
+        "technical": "多智能体RL复杂度高，训练难度大",
+        "resource": "需要大规模仿真环境，计算资源需求高",
+        "time": "10-12个月",
+        "risks": ["多智能体收敛困难", "通信开销大"]
+      },
+      "impact": {
+        "score": 9,
+        "academic": "多智能体+多模态双重创新",
+        "application": "解决分布式协同问题，应用价值高",
+        "publication": "适合NeurIPS/ICML或IEEE JSAC"
+      },
+      "novelty": {
+        "score": 9,
+        "status": "NOVEL",
+        "differentiation": "多模态多智能体在卫星网络中首次提出"
+      },
+      "challenge_resistance": {
+        "score": 5,
+        "critical_issues": ["多智能体训练不稳定", "多模态增加状态空间复杂度"],
+        "major_issues": ["可扩展性问题"],
+        "responses": ["可使用 centralized training decentralized execution", "可简化多模态设计"]
+      },
+      "total_score": 7.3
+    },
+    {
+      "id": "I006",
+      "title": "语义-信道联合感知的卫星通信智能切换决策",
+      "feasibility": {
+        "score": 9,
+        "technical": "技术成熟度最高，问题定义清晰",
+        "resource": "CSI数据易获取，语义标签可设计",
+        "time": "5-6个月",
+        "risks": ["创新性相对较低"]
+      },
+      "impact": {
+        "score": 7,
+        "academic": "语义+信道融合有一定创新性",
+        "application": "切换优化是实际问题",
+        "publication": "适合IEEE TWC/GLOBECOM"
+      },
+      "novelty": {
+        "score": 7,
+        "status": "PARTIALLY_NOVEL",
+        "differentiation": "语义感知切换有相关工作，但卫星场景+多模态是新的"
+      },
+      "challenge_resistance": {
+        "score": 8,
+        "critical_issues": ["语义标签设计需要领域知识"],
+        "major_issues": ["语义-信道融合方式选择"],
+        "responses": ["可设计标准化语义标签体系", "可对比多种融合策略"]
+      },
+      "total_score": 7.8
+    },
+    {
+      "id": "I007",
+      "title": "视觉-语言预训练模型辅助的卫星频谱态势感知",
+      "feasibility": {
+        "score": 8,
+        "technical": "CLIP等预训练模型可直接使用",
+        "resource": "频谱图数据可获取",
+        "time": "6-7个月",
+        "risks": ["频谱图-文本配对需要设计"]
+      },
+      "impact": {
+        "score": 8,
+        "academic": "零样本学习在通信中有价值",
+        "application": "降低标注成本",
+        "publication": "适合IEEE TWC/Signal Processing"
+      },
+      "novelty": {
+        "score": 8,
+        "status": "NOVEL",
+        "differentiation": "VLP模型用于频谱感知是新的"
+      },
+      "challenge_resistance": {
+        "score": 7,
+        "critical_issues": ["频谱图与自然图像差异较大"],
+        "major_issues": ["文本描述如何设计"],
+        "responses": ["可设计频谱专用视觉编码器", "可使用领域适配"]
+      },
+      "total_score": 7.7
+    }
+  ],
+  "ranking": [
+    {"rank": 1, "id": "I002", "score": 8.3, "reason": "LLM+通信交叉热点，创新性最高，虽然实时性有挑战但可解决"},
+    {"rank": 2, "id": "I001", "score": 8.2, "reason": "多模态融合引入卫星资源管理，创新性强且可行性高"},
+    {"rank": 3, "id": "I006", "score": 7.8, "reason": "可行性最高，问题清晰，适合快速产出"},
+    {"rank": 4, "id": "I007", "score": 7.7, "reason": "预训练模型利用，降低标注成本，有应用价值"},
+    {"rank": 5, "id": "I003", "score": 7.3, "reason": "迁移学习成熟但创新性相对较低"},
+    {"rank": 6, "id": "I004", "score": 7.3, "reason": "创新性高但复杂度高、风险大"}
+  ],
+  "top_3_recommendation": ["I002", "I001", "I006"]
+}

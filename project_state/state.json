@@ -1,0 +1,62 @@
+{
+  "pipeline_id": "pipeline_20260321_multimodal_satellite",
+  "research_direction": "多模态模型（频谱+文字等通信相关信息类型组合）在卫星网络通信背景下的资源管理应用",
+  "current_stage": "completed",
+  "stage_status": {
+    "stage_1": {
+      "status": "completed",
+      "score": 8.0,
+      "iterations": 1,
+      "output": "LITERATURE_REPORT.md",
+      "timestamp": "2026-03-21T18:30:00Z"
+    },
+    "stage_2": {
+      "status": "completed",
+      "score": 8.3,
+      "iterations": 1,
+      "output": "IDEA_REPORT.md",
+      "selected_idea_id": "I002",
+      "timestamp": "2026-03-21T19:00:00Z"
+    },
+    "stage_3": {
+      "status": "completed",
+      "decision": "PASS",
+      "output": "NOVELTY_REPORT.md",
+      "timestamp": "2026-03-21T19:30:00Z"
+    },
+    "stage_4": {
+      "status": "completed",
+      "score": 9.0,
+      "iterations": 1,
+      "output": "FINAL_PROPOSAL.md",
+      "timestamp": "2026-03-21T20:00:00Z"
+    },
+    "stage_5": {
+      "status": "completed",
+      "output": "EXPERIMENT_PLAN.md",
+      "timestamp": "2026-03-21T21:00:00Z",
+      "summary": {
+        "main_experiments": 4,
+        "ablation_experiments": 8,
+        "baselines": 8,
+        "estimated_gpu_hours": 520,
+        "estimated_duration_weeks": 8
+      }
+    }
+  },
+  "config": {
+    "lit_threshold": 8,
+    "idea_threshold": 8,
+    "refine_threshold": 9,
+    "top_ideas": 3
+  },
+  "artifacts": {
+    "literature_report": "project_state/stage_1_literature/LITERATURE_REPORT.md",
+    "idea_report": "project_state/stage_2_ideas/IDEA_REPORT.md",
+    "novelty_report": "project_state/stage_3_novelty/NOVELTY_REPORT.md",
+    "final_proposal": "project_state/stage_4_proposal/FINAL_PROPOSAL.md",
+    "experiment_plan": "project_state/stage_5_experiment/EXPERIMENT_PLAN.md"
+  },
+  "created_at": "2026-03-21T18:00:00Z",
+  "completed_at": "2026-03-21T21:00:00Z"
+}
