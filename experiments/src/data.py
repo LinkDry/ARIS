@@ -200,14 +200,14 @@ def generate_synthetic_data(num_samples: int = 10000,
             for v in req['resource_vector']
         ]
 
-        # Create sample
+        # Create sample (priority adjusted to 0-3 range for classification)
         sample = SemanticPair(
             description=description,
             service_type=service_type,
             latency_class=req['latency_class'],
             bandwidth_class=req['bandwidth_class'],
             reliability_class=req['reliability_class'],
-            priority=random.randint(*req['priority_range']),
+            priority=random.randint(*req['priority_range']) - 1,  # Convert 1-4 to 0-3
             resource_vector=resource_vector,
         )
         samples.append(sample)

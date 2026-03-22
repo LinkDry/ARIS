@@ -1,0 +1,82 @@
+# LLM-SRAF 实验配置
+# ===================
+
+# 模型配置
+model:
+  semantic_hidden_dim: 512
+  semantic_output_dim: 128
+  state_input_dim: 64
+  state_hidden_dim: 256
+  state_output_dim: 128
+  orbit_input_dim: 32
+  orbit_hidden_dim: 128
+  orbit_output_dim: 64
+  fusion_output_dim: 256
+  actor_hidden_dim: 256
+  critic_hidden_dim: 256
+  num_beams: 8
+  num_spectrum_blocks: 16
+  num_power_levels: 5
+  num_priorities: 4
+
+# 数据配置
+data:
+  train_path: data/semantic_pairs/train.json
+  val_path: data/semantic_pairs/val.json
+  test_path: data/semantic_pairs/test.json
+  max_length: 128
+  vocab_size: 50000
+
+# 训练配置 - 语义模块
+semantic_training:
+  epochs: 20
+  batch_size: 64
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  warmup_ratio: 0.1
+  seed: 42
+
+# 训练配置 - RL模块
+rl_training:
+  num_episodes: 5000
+  horizon: 256
+  learning_rate: 3.0e-4
+  gamma: 0.99
+  lambda_gae: 0.95
+  clip_epsilon: 0.2
+  entropy_coef: 0.01
+  value_coef: 0.5
+  ppo_epochs: 4
+  batch_size: 64
+
+# 环境配置
+environment:
+  num_satellites: 1584
+  num_users: 100
+  altitude_km: 550
+  sim_duration: 100
+  time_step_ms: 100
+
+# 评估配置
+evaluation:
+  num_episodes: 100
+  metrics:
+    - latency_acc
+    - bandwidth_acc
+    - throughput
+    - latency_satisfaction
+    - resource_utilization
+
+# 输出配置
+output:
+  model_dir: models/
+  log_dir: logs/
+  result_dir: results/
+  checkpoint_interval: 5
+
+# 硬件配置
+hardware:
+  device: cuda
+  num_workers: 4
+  pin_memory: true
