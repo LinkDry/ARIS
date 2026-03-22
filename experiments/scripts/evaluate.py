@@ -113,14 +113,26 @@ class Evaluator:
                 episode_latency = []
 
                 for step in range(100):
-                    # 获取状态向量
+                    # 获取状态向量并确保正确维度
+                    network_state_vec = env.get_network_state_vector()
+                    orbit_info_vec = env.get_orbit_info_vector()
+
+                    # Ensure correct dimensions
+                    if len(network_state_vec) < 64:
+                        network_state_vec = np.pad(network_state_vec, (0, 64 - len(network_state_vec)))
+                    network_state_vec = network_state_vec[:64]
+
+                    if len(orbit_info_vec) < 32:
+                        orbit_info_vec = np.pad(orbit_info_vec, (0, 32 - len(orbit_info_vec)))
+                    orbit_info_vec = orbit_info_vec[:32]
+
                     network_state = torch.tensor(
-                        env.get_network_state_vector(),
+                        network_state_vec,
                         dtype=torch.float32
                     ).unsqueeze(0).to(self.device)
 
                     orbit_info = torch.tensor(
-                        env.get_orbit_info_vector(),
+                        orbit_info_vec,
                         dtype=torch.float32
                     ).unsqueeze(0).to(self.device)
 

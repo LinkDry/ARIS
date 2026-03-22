@@ -1,0 +1,40 @@
+{
+  "semantic": {
+    "latency_acc": 0.9109,
+    "bandwidth_acc": 0.8901,
+    "reliability_acc": 0.9244,
+    "priority_acc": 0.4709,
+    "overall_acc": 0.799075
+  },
+  "resource_allocation": {
+    "mean_reward": 74.96169664336941,
+    "std_reward": 0.8764393312102391,
+    "mean_throughput": 901.5849308725999,
+    "mean_latency_satisfaction": 0.8745548368355267,
+    "mean_resource_utilization": 0.6901512248940459
+  },
+  "latency": {
+    "mean_latency_ms": 1.2494601999933366,
+    "std_latency_ms": 0.29135635330574633,
+    "p50_latency_ms": 1.1366999999609106,
+    "p95_latency_ms": 2.1826500001907334,
+    "p99_latency_ms": 2.3294619999251154
+  },
+  "baselines": {
+    "LLM-SRAF": {
+      "mean_reward": 75.11332273037084,
+      "std_reward": 0.9148957141491884,
+      "mean_throughput": 899.2247427649388,
+      "mean_latency_satisfaction": 0.8752693968070734,
+      "mean_resource_utilization": 0.6964025377143709
+    },
+    "Random": {
+      "mean_reward": 75.21024653244801,
+      "std_reward": 0.7535083255896726
+    },
+    "RoundRobin": {
+      "mean_reward": 74.85784727208214,
+      "std_reward": 0.8405323209302697
+    }
+  }
+}

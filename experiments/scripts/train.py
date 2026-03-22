@@ -263,6 +263,24 @@ def collect_trajectories(model, env, device, horizon):
         input_ids = torch.zeros(1, 128, dtype=torch.long).to(device)
         attention_mask = torch.ones(1, 128, dtype=torch.long).to(device)
 
+        # Get state vectors with correct dimensions
+        network_state_vec = env.get_network_state_vector()
+        orbit_info_vec = env.get_orbit_info_vector()
+
+        # Ensure correct dimensions
+        if len(network_state_vec) < 64:
+            network_state_vec = np.pad(network_state_vec, (0, 64 - len(network_state_vec)))
+        network_state_vec = network_state_vec[:64]
+
+        if len(orbit_info_vec) < 32:
+            orbit_info_vec = np.pad(orbit_info_vec, (0, 32 - len(orbit_info_vec)))
+        orbit_info_vec = orbit_info_vec[:32]
+
+        network_state = torch.tensor(network_state_vec,
+                                     dtype=torch.float32).unsqueeze(0).to(device)
+        orbit_info = torch.tensor(orbit_info_vec,
+                                  dtype=torch.float32).unsqueeze(0).to(device)
+
         # Forward pass
         outputs = model(input_ids, attention_mask, network_state, orbit_info)
 
