@@ -1,4 +1,8 @@
-# LLM-SRAF .gitignore
+# AI4Sci .gitignore
+
+# 嵌入的git仓库（作为子模块或单独管理）
+Auto-claude-code-research-in-sleep/
+academic-research-skills/
 
 # 不同步的内容
 paper/
@@ -10,6 +14,12 @@ data/processed/
 logs/
 results/*.csv
 .env
+
+# 模型权重（大文件）
+*.bin
+*.safetensors
+models/*.pt
+models/*.pth
 
 # Python
 __pycache__/
